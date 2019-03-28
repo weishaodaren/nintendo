@@ -139,7 +139,10 @@ export default {
         },
     },
     created(){
-        this.loadMore();
+        this.loadMore();   
+
+
+        
     }
 }
 </script>
