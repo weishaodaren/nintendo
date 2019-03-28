@@ -1,6 +1,6 @@
 <template>
    <div class="app-newslist">
-      <h2>新闻列表</h2>
+      <h2>最新话题</h2>
        <ul class="mui-table-view">
             <li class="mui-table-view-cell mui-media" :key="item.id" v-for="item of list">
                 <router-link :to="'/Newsinfo?nid='+item.id">
@@ -28,7 +28,7 @@ export default {
     },
    methods:{
         NewsList(){
-             var url="http://127.0.0.1:3000/newslist";
+             var url="http://127.0.0.1:6605/index_reco";
              this.axios.get(url).then(res=>{
               //   console.log(res.data.data);
                  this.list = res.data.data;
@@ -54,6 +54,6 @@ export default {
 <style>
    .app-newslist li .mui-ellipsis{
         display:flex; justify-content:space-between;
-        font-size:15px; color:#226aff;
+        font-size:15px; color:#126;opacity: 1;
    }
 </style>

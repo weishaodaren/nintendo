@@ -71,6 +71,7 @@ export default {
       }
     .home_name .mint-swipe img{
           width:100%;
+          height:135px; 
       }
 /*九空格*/ 
  .home_name .mui-table-view img{

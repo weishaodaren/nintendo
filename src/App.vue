@@ -48,7 +48,7 @@
 
 <style>
    .app-container{
-     padding-top:40px;
+     padding-top:50px;
      padding-bottom:50px;
      overflow-x:hidden;
    }
@@ -56,7 +56,7 @@
   background-color:#e60012 !important;
   font-style: italic;
   font-size: 12px;
-  height: 40px !important;
+  height: 50px !important;
 }
 .mint-header-title {
     overflow: hidden;
