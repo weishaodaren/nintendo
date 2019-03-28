@@ -61,8 +61,8 @@ export default{
             });
         },
         getImages(){
-            this.axios.get('http://127.0.0.1:3000/imageList').then(result=>{
-                // console.log(result.data);
+            this.axios.get('http://127.0.0.1:6605/about_games').then(result=>{
+                console.log(result.data);
                  this.rows=result.data;
             });
         },

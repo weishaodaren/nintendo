@@ -27,13 +27,13 @@
         </router-link></li>
     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
         <img src="../../img/menu4.png">
-        <div class="mui-media-body">location</div></a></li>
+        <div class="mui-media-body">支付信息</div></a></li>
     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
         <img src="../../img/menu5.png">
-        <div class="mui-media-body">Search</div></a></li>
+        <div class="mui-media-body">搜索</div></a></li>
     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
         <img src="../../img/menu6.png">
-        <div class="mui-media-body">Phone</div></a></li>
+        <div class="mui-media-body">订单</div></a></li>
 </ul> 
   <!--tabber--> 
 <!--放到公共样式中了--> 

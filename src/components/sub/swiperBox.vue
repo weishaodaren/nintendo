@@ -2,7 +2,7 @@
 <div class="app-swiperBox">
     <mt-swipe :auto="2500">
     <mt-swipe-item v-for="item of list" :key="item.id">
-    <img :src="item.img_url"/>
+    <img :src="item.gameUrl"/>
     </mt-swipe-item>
     </mt-swipe>
 </div>
