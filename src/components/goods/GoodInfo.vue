@@ -56,7 +56,7 @@ export default{
             this.add--;
         },
         findGoodInfo(){
-            this.axios.get('http://127.0.0.1:3000/findProduct?pid='+this.pid).then(result=>{
+            this.axios.get('http://127.0.0.1:6605/findProduct?pid='+this.pid).then(result=>{
                 this.info=result.data.data[0];
             });
         },
@@ -71,7 +71,7 @@ export default{
             var price=this.info.price;
             // console.log(pid+'_'+price+'_'+uid);
             //2.发送ajax请求
-            var url=' http://127.0.0.1:3000/addcart?uid=1&pid='+pid+'&price='+price;
+            var url=' http://127.0.0.1:6605/addcart?uid=1&pid='+pid+'&price='+price;
                 // url+=' ';
                 // url+=' ;
                 // url+=' ;

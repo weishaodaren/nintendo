@@ -37,11 +37,12 @@ export default {
         //加载下一页的数据
         getMore(){
             this.pno++;
-            var url="http://127.0.0.1:3000/newslist?pno="+this.pno+"&pageSize="+this.pageSize;
+            var url="http://127.0.0.1:6605/newslist?pno="+this.pno+"&pageSize="+this.pageSize;
              this.axios.get(url).then(res=>{
-                // console.log(res.data.data);
                   //push的 是返回数组长度  所以用concat拼接
                 this.list = this.list.concat(res.data.data);
+             }).catch((err)=>{
+                 console.log(err);
              })
         },
     },

@@ -54,7 +54,7 @@ export default {
             });
 
             //2：发送post 请求
-            var url='http://127.0.0.1:3000/addcomment';
+            var url='http://127.0.0.1:6605/addcomment';
             this.axios.post(url,postDate).then(result=>{
                 //console.log(result.data);
                 //1.提示发表成功；清空评论区域
@@ -72,7 +72,7 @@ export default {
           },
           getMore(){
               this.pno++;
-              var url="http://127.0.0.1:3000/getComment?nid="+this.$route.query.nid+"&pno"
+              var url="http://127.0.0.1:6605/getComment?nid="+this.$route.query.nid+"&pno"
               +this.pno+"&pageSize="+this.pageSize;
               this.axios.get(url).then(res=>{
                  this.list = this.list.concat(res.data.data);

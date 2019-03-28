@@ -1,7 +1,7 @@
 <template>
    <div class="app-goodlist">
         <div class="goods-item" v-for="item of list" :key="item.lid">
-            <img @click="jumpInfo" :data-lid="item.lid" :src="'http://127.0.0.1:3000/'+item.md" alt="can't find" >
+            <img @click="jumpInfo" :data-lid="item.lid" :src="item.md" alt="can't find" >
             <h4>{{item.title}}</h4>
             <div class="info">
                  <span class="now">&yen;{{(item.price).toFixed(2)}}</span>
@@ -29,10 +29,10 @@ export default {
 
           },
           getMore(){
-              this.pno++;
-              var url="http://127.0.0.1:3000/products?pno="+this.pno+"&pageSize="+this.pageSize;
+            //   this.pno++;
+              var url="http://127.0.0.1:6605/products?pno="+this.pno+"&pageSize="+this.pageSize;
               this.axios.get(url).then(res=>{
-                // console.log(res.data.data);
+                console.log(res.data.data);
                   //push的 是返回数组长度  所以用concat拼接
                 this.list = this.list.concat(res.data.data);
               })

@@ -47,7 +47,7 @@ import {Toast} from 'mint-ui';
                     return;
                 }
                 //3.发送ajax请求
-                var url= "http://127.0.0.1:3000/";
+                var url= "http://127.0.0.1:6605/";
                     url+= "Login?uname="+u+"&upwd="+p;
                 this.axios.get(url).then(result=>{
                     if(result.data.code==1){

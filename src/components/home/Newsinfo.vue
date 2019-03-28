@@ -37,7 +37,7 @@ export default {
     },
     methods:{
          findNewsInfo(){
-             var url="http://127.0.0.1:3000/findNewsInfo?id="+this.$route.query.nid
+             var url="http://127.0.0.1:6605/findNewsInfo?id="+this.$route.query.nid
              this.axios.get(url).then(res=>{
                  //  this.list = this.list.concat(res.data.data);
                this.list = res.data.data[0]
