@@ -1,6 +1,6 @@
 <template>
    <div class="app-newslist">
-      <h2>最新话题</h2>
+      <h2>最新话题哟😑</h2>
        <ul class="mui-table-view">
             <li class="mui-table-view-cell mui-media" :key="item.id" v-for="item of list">
                 <router-link :to="'/Newsinfo?nid='+item.id">
@@ -30,7 +30,7 @@ export default {
     },
    methods:{
         NewsList(){
-             var url="http://127.0.0.1:6605/newslist";
+             var url=this.$store.state.globalUrl+"newslist";
              this.axios.get(url).then(res=>{
                 //  console.log(res.data.data);
                 //  console.log(this.list)
@@ -39,7 +39,7 @@ export default {
         //加载下一页的数据
         getMore(){
             this.pno++;
-            var url="http://127.0.0.1:6605/newslist?pno="+this.pno+"&pageSize="+this.pageSize;
+            var url=this.$store.state.globalUrl+"newslist?pno="+this.pno+"&pageSize="+this.pageSize;
              this.axios.get(url).then(res=>{
                   //push的 是返回数组长度  所以用concat拼接
                  this.list = this.list.concat(res.data.data)
@@ -49,7 +49,7 @@ export default {
         },
     },
     created(){
-        console.log(this.$route.query.nid)
+        // console.log(this.$route.query.nid)
         this.NewsList();    
     },
 }

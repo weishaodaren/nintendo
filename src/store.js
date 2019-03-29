@@ -6,6 +6,7 @@ Vue.use(Vuex);
 //0.3创建store
 export default new Vuex.Store({
   state:{
+    globalUrl:'http://127.0.0.1:6605/',
     cartCount:sessionStorage.getItem("cartCount")||0 //共享数据：购物车中商品数量
   },
   mutations:{

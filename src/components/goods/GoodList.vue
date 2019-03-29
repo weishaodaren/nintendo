@@ -30,7 +30,7 @@ export default {
           },
           getMore(){
               this.pno++;
-              var url="http://127.0.0.1:6605/products?pno="+this.pno+"&pageSize="+this.pageSize;
+              var url=this.$store.state.globalUrl+"products?pno="+this.pno+"&pageSize="+this.pageSize;
               this.axios.get(url).then(res=>{
                 console.log(res.data.data);
                   //push的 是返回数组长度  所以用concat拼接

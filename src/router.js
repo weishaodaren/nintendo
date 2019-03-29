@@ -12,6 +12,7 @@ import GoodInfo from './components/goods/GoodInfo.vue';
 import Login from './components/home/Login.vue';
 import ShopCart from './components/home/ShopCart.vue';
 import Logout from './components/home/Logout.vue';
+import Register from './components/Register.vue';
 
 
 Vue.use(Router)
@@ -29,7 +30,8 @@ export default new Router({
     {path:'/GoodInfo',component:GoodInfo},
     {path:'/Login',component:Login},
     {path:'/ShopCart',component:ShopCart},
-    {path:'/Logout',component:Logout}
+    {path:'/Logout',component:Logout},
+    {path:'/Register',component:Register}
   ]
 })
 

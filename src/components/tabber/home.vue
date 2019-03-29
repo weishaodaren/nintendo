@@ -52,7 +52,7 @@ export default {
     },
     methods:{
          handleImage(){
-             var url="http://127.0.0.1:6605/index";
+             var url=this.$store.state.globalUrl+"index";
              this.axios.get(url).then(res=>{
                 //  console.log(res.data);
                  this.list = res.data;

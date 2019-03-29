@@ -1,10 +1,11 @@
 <template>
  <div class="app-container">
     <!--添加公共样式 Header-->
-    <mt-header title="Nintnedo" fixed> <router-link to="" slot="left">
-    <mt-button icon="back"  @click.native="$router.back(-1)"></mt-button>
-  </router-link>
-  <mt-button icon="more" slot="right"></mt-button></mt-header>
+    <mt-header title="Nintnedo" fixed>
+        <router-link to=""  slot="left">
+            <mt-button icon="back"  @click.native="$router.back(-1)"></mt-button>
+        </router-link>
+  <mt-button icon="more" slot="right" @click.native="toHome"></mt-button></mt-header>
 
 
 
@@ -55,15 +56,15 @@
 export default {
     data(){
         return{
-
+            goback:true
         }
     },
     methods:{
         toHome(){
             this.$router.push('/Home');
-            
         }
-    }
+    },
+   
 }
 </script>
 

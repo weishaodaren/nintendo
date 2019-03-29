@@ -47,12 +47,11 @@ import {Toast} from 'mint-ui';
                     return;
                 }
                 //3.发送ajax请求
-                var url= "http://127.0.0.1:6605/";
-                    url+= "Login?uname="+u+"&upwd="+p;
+                var url=this.$store.state.globalUrl+"Login?uname="+u+"&upwd="+p;
                 this.axios.get(url).then(result=>{
                     if(result.data.code==1){
                         //发送ajax请求 获取购物车中商品数量 立即直接更新 updateCount()
-                        
+                        Toast(`登录成功`)
                         this.$router.push('/home')
                     }else{
                         Toast(`用户名或密码有误`);

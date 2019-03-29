@@ -56,12 +56,12 @@ export default{
             this.add--;
         },
         findGoodInfo(){
-            this.axios.get('http://127.0.0.1:6605/findProduct?pid='+this.pid).then(result=>{
+            this.axios.get(this.$store.state.globalUrl+'findProduct?pid='+this.pid).then(result=>{
                 this.info=result.data.data[0];
             });
         },
         getImages(){
-            this.axios.get('http://127.0.0.1:6605/about_games').then(result=>{
+            this.axios.get(this.$store.state.globalUrl+'about_games').then(result=>{
                 console.log(result.data);
                  this.rows=result.data;
             });
@@ -71,16 +71,16 @@ export default{
             var price=this.info.price;
             // console.log(pid+'_'+price+'_'+uid);
             //2.发送ajax请求
-            var url=' http://127.0.0.1:6605/addcart?uid=1&pid='+pid+'&price='+price;
+            var url=this.$store.state.globalUrl+'addcart?uid=1&pid='+pid+'&price='+price;
                 // url+=' ';
                 // url+=' ;
                 // url+=' ;
             this.axios.get(url).then(result=>{
                 // console.log(11);
                 if(result.data.code==1){
-                    Toast(`登陆成功`);
+                    Toast(`加入成功`);
                 }else{
-                    Toast(`登陆失败`);
+                    Toast(`加入失败`);
                 }
             });
         }

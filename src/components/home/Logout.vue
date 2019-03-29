@@ -8,7 +8,7 @@ import {Toast} from 'mint-ui';
             return{}
         },
         created() {
-            var url="http://127.0.0.1:6605/logout";
+            var url=this.$store.state.globalUrl+"logout";
             this.axios.get(url).then(res=>{
                 Toast(`已退出`);
             })

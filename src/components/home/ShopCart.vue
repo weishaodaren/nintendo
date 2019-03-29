@@ -53,7 +53,7 @@ export default {
             var idx=e.target.dataset.idx;
             console.log(idx);
             //2发送ajax请求
-            this.axios.get('http://127.0.0.1:6605/delCart?id='+id).then(result=>{
+            this.axios.get(this.$store.state.globalUrl+'delCart?id='+id).then(result=>{
                 if(result.data.code==1){
                     //3返回结果判断是否删除成功
                     Toast(`删除成功`);
@@ -64,7 +64,7 @@ export default {
             })
         },
         loadMore(){
-            var url = "http://127.0.0.1:6605/cartlist?uid=1"
+            var url =this.$store.state.globalUrl+"cartlist?uid=1"
             this.axios.get(url).then(res=>{
                 //1.判断如果没有登录 显示出错信息
                 if(res.data.code==-1){
@@ -128,7 +128,7 @@ export default {
             }
             // console.log(html);
             //发送ajax请求 删除多个商品
-            this.axios.get('http://127.0.0.1:6605/removeMitem?ids='+html).then(res=>{
+            this.axios.get(this.$store.state.globalUrl+'removeMitem?ids='+html).then(res=>{
                 if(res.data.code==1){
                     Toast(`删除成功`);
                     this.loadMore();

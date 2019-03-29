@@ -1,11 +1,10 @@
 <template>
    <div class="app-goodlist">
-        <div class="mui-card">
+        <div class="mui-card" style="width:370px">
             <div class="mui-card-content">
                 <div class="mui-card-content-inner">
                     发表评论
-                    <textarea placeholder="请输入120个字" maxlength="120" v-model='msg'>
-                    
+                    <textarea placeholder="随便说点感想吧😁" maxlength="120" v-model='msg'>
                     </textarea>
                     <mt-button size="large" type="primary" @click=addcomment>发表评论</mt-button>
                 </div> 
@@ -35,7 +34,7 @@ export default {
       methods:{
           addcomment(){
            //获取评论内容
-        //    var m=this.msg;
+        // var m=this.msg;
            //判断是否为空
            //trim去除字符串两端的空格
            var size=this.msg.trim().length;
@@ -45,7 +44,7 @@ export default {
                //添加提示框
            }
            var nid=this.$route.query.nid;
-           console.log(nid);
+        //    console.log(nid);
             //1:创建参数对象 postDate
             //stringify将js对象转换成查询字符串
             var postDate=this.qs.stringify({
@@ -54,7 +53,7 @@ export default {
             });
 
             //2：发送post 请求
-            var url='http://127.0.0.1:6605/addcomment';
+            var url=this.$store.state.globalUrl+'addcomment';
             this.axios.post(url,postDate).then(result=>{
                 //console.log(result.data);
                 //1.提示发表成功；清空评论区域
@@ -72,7 +71,7 @@ export default {
           },
           getMore(){
               this.pno++;
-              var url="http://127.0.0.1:6605/getComment?nid="+this.$route.query.nid+"&pno"
+              var url=this.$store.state.globalUrl+"getComment?nid="+this.$route.query.nid+"&pno"
               +this.pno+"&pageSize="+this.pageSize;
               this.axios.get(url).then(res=>{
                  this.list = this.list.concat(res.data.data);
@@ -82,7 +81,7 @@ export default {
       },
       created:function(){
           this.getMore();
-          //this.addcomment();
+        //   this.addcomment();
       }
 }
 </script>

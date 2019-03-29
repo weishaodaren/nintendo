@@ -1,6 +1,6 @@
 <template>
   <div class="app-newsinfo">
-     <h1>新闻详细</h1>
+     <h2>游戏情报</h2>
      <!--详细信息-->
      <div class="mui-card">
         <div class="mui-card-header mui-card-media" :style="'height:40vw;background-image:url('+list.img_url+')'"></div>
@@ -37,11 +37,11 @@ export default {
     },
     methods:{
          findNewsInfo(){
-             var url="http://127.0.0.1:6605/findNewsInfo?id="+this.$route.query.nid
+             var url=this.$store.state.globalUrl+"findNewsInfo?id="+this.$route.query.nid
              this.axios.get(url).then(res=>{
-                 //  this.list = this.list.concat(res.data.data);
+                  this.list = this.list.concat(res.data.data);
                this.list = res.data.data[0]
-              console.log(res.data.data)
+            //   console.log(res.data)
               //  console.log(this.list.title)
              })
          }

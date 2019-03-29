@@ -23,7 +23,7 @@ export default {
           this.$router.push("/NewsList?nid=6")
       },
       jump4(){
-          this.axios.get('http://127.0.0.1:6605/about_games_msg').then((res)=>{
+          this.axios.get(this.$store.state.globalUrl+'about_games_msg').then((res)=>{
               console.log(res.data)
           }).catch((err)=>{
               console.log(err)
