@@ -38,10 +38,10 @@ import {Toast} from 'mint-ui';
 export default{
     data(){
         return{
-             rows:[],//保存子组件显示的数据
-             info:{},//创建对象保存商品信息 lname price
-             pid:this.$route.query.pid,
-             add:1,
+            rows:[],//保存子组件显示的数据
+            info:{},//创建对象保存商品信息 lname price
+            pid:this.$route.query.pid,
+            add:1,
              
         }
     },

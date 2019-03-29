@@ -29,7 +29,7 @@ export default {
 
           },
           getMore(){
-            //   this.pno++;
+              this.pno++;
               var url="http://127.0.0.1:6605/products?pno="+this.pno+"&pageSize="+this.pageSize;
               this.axios.get(url).then(res=>{
                 console.log(res.data.data);

@@ -18,6 +18,8 @@
    </div>
 </template>
 <script>
+import { InfiniteScroll } from 'mint-ui';
+// Vue.use(InfiniteScroll);
 export default {
     data(){
         return {
@@ -28,10 +30,10 @@ export default {
     },
    methods:{
         NewsList(){
-             var url="http://127.0.0.1:6605/index_reco";
+             var url="http://127.0.0.1:6605/newslist";
              this.axios.get(url).then(res=>{
-              //   console.log(res.data.data);
-                 this.list = res.data.data;
+                //  console.log(res.data.data);
+                //  console.log(this.list)
              })
         },
         //加载下一页的数据
@@ -40,14 +42,14 @@ export default {
             var url="http://127.0.0.1:6605/newslist?pno="+this.pno+"&pageSize="+this.pageSize;
              this.axios.get(url).then(res=>{
                   //push的 是返回数组长度  所以用concat拼接
-                this.list = this.list.concat(res.data.data);
+                 this.list = this.list.concat(res.data.data)
              }).catch((err)=>{
                  console.log(err);
              })
         },
     },
     created(){
-        // console.log(this.$route.query.nid)
+        console.log(this.$route.query.nid)
         this.NewsList();    
     },
 }

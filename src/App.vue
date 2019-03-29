@@ -1,7 +1,12 @@
 <template>
  <div class="app-container">
     <!--添加公共样式 Header-->
-    <mt-header title="Nintnedo" fixed></mt-header>
+    <mt-header title="Nintnedo" fixed> <router-link to="" slot="left">
+    <mt-button icon="back"  @click.native="$router.back(-1)"></mt-button>
+  </router-link>
+  <mt-button icon="more" slot="right"></mt-button></mt-header>
+
+
 
 
     <router-view></router-view>    <!--router-view 是占位符--> 
@@ -46,6 +51,22 @@
  </div>
 </template>
 
+<script>
+export default {
+    data(){
+        return{
+
+        }
+    },
+    methods:{
+        toHome(){
+            this.$router.push('/Home');
+            
+        }
+    }
+}
+</script>
+
 <style>
    .app-container{
      padding-top:50px;
@@ -68,9 +89,7 @@
     -ms-flex: 1;
     flex: 1;
 }
- /* .mui-bar-tab .mui-tab-item-tao.mui-active {
-    color: #e60012;
- } */
+
  .mui-bar-tab .mui-tab-item.mui-active {
     color: gray !important;
 }

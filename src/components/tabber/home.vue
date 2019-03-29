@@ -3,7 +3,7 @@
   <!--导航条-->
      <!--放到公共样式中了-->
   <!--轮播图-->
-    <mt-swipe  :auto="3000">
+    <mt-swipe  :auto="3000" :show-indicators="false">
        <mt-swipe-item v-for="item in list" :key="item.id">
                 <img :src="item.imgUrl">
        </mt-swipe-item>
