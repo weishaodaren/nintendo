@@ -43,10 +43,9 @@
 <!--放到公共样式中了--> 
     
 <!-- 加入一个GIF短动画 -->
-<div class="mui-card mui-card-media">
-        <img :src="my_gif" class="myGif"/>
+<div class="mui-card mui-card-media" v-for="item of my_gif" :key="item.id">
+        <img :src="item.myGif"/>
 </div>
-
 
   </div>
 </template>
@@ -56,7 +55,7 @@ export default {
         return {
             list:[
             ],
-            my_gif:''
+            my_gif:[]
         }
     },
     methods:{
@@ -70,7 +69,7 @@ export default {
          handlegIF(){
              var url=this.$store.state.globalUrl+"myGif";
          this.axios.get(url).then((res)=>{
-                // console.log(res.data);
+                console.log(res);
                 this.my_gif=res.data;
             }).catch((err)=>{
             console.log(err)
@@ -101,8 +100,6 @@ export default {
      background:#fff;
  }
  .mui-card > img:first-child {
-    font-size: 0;
-    line-height: 0;
     float: left;
     width: 100% !important;
     height: 200px !important;
