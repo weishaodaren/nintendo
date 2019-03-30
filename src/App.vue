@@ -1,7 +1,7 @@
 <template>
  <div class="app-container">
     <!--添加公共样式 Header-->
-    <mt-header title="Nintnedo" fixed>
+    <mt-header title="Nintnedo" fixed >
         <router-link to=""  slot="left">
             <mt-button icon="back"  @click.native="$router.back(-1)"></mt-button>
         </router-link>

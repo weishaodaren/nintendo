@@ -8,7 +8,7 @@
             <form>
             用户名<input type='text' name='uname' v-model='uname'/><br><!--双向绑定-->
             密码<input type='password' name='upwd' v-model='upwd' @focus="showoff" @blur="showin"/>
-            <input type='button' @click=btnLogin value='登录'/>        
+            <input type='button'  @click=btnLogin value='登录' class="login_btn"/>        
             </form>
         </div>
     </div>
@@ -66,4 +66,12 @@ import {Toast} from 'mint-ui';
         },
     };
 </script>
-<style></style>
+<style>
+.login_btn{
+    background: #e60012 !important;
+    color: #fff !important;
+    font-weight: bolder !important;
+    font-style: oblique;
+    width: 100%;
+}
+</style>

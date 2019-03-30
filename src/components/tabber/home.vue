@@ -25,19 +25,28 @@
         <img src="../../img/menu3.png">
         <div class="mui-media-body">购物车</div>
         </router-link></li>
-    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+        <router-link to="/Logout">
         <img src="../../img/menu4.png">
-        <div class="mui-media-body">支付信息</div></a></li>
-    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+        <div class="mui-media-body">登出</div>
+        </router-link></li>
+    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+        <router-link to="/Login">
         <img src="../../img/menu5.png">
-        <div class="mui-media-body">搜索</div></a></li>
+        <div class="mui-media-body">登录</div>
+        </router-link></li>
     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
         <img src="../../img/menu6.png">
-        <div class="mui-media-body">订单</div></a></li>
+        <div class="mui-media-body">搜索</div></a></li>
 </ul> 
   <!--tabber--> 
 <!--放到公共样式中了--> 
     
+<!-- 加入一个GIF短动画 -->
+<div class="mui-card mui-card-media">
+        <img :src="my_gif" class="myGif"/>
+</div>
+
 
   </div>
 </template>
@@ -46,8 +55,8 @@ export default {
     data:function(){
         return {
             list:[
-                // {id:1,img_url:"img/banner1.png"},{id:2,img_url:"img/banner2.png"},{id:3,img_url:"img/banner3.png"}
             ],
+            my_gif:''
         }
     },
     methods:{
@@ -57,10 +66,20 @@ export default {
                 //  console.log(res.data);
                  this.list = res.data;
              })
-         }
+         },
+         handlegIF(){
+             var url=this.$store.state.globalUrl+"myGif";
+         this.axios.get(url).then((res)=>{
+                // console.log(res.data);
+                this.my_gif=res.data;
+            }).catch((err)=>{
+            console.log(err)
+            })
+        }
     },
     created(){
         this.handleImage();
+        this.handlegIF();
     },
 }
 </script>
@@ -81,4 +100,12 @@ export default {
   .home_name .mui-table-view.mui-grid-9{
      background:#fff;
  }
+ .mui-card > img:first-child {
+    font-size: 0;
+    line-height: 0;
+    float: left;
+    width: 100% !important;
+    height: 200px !important;
+}
+
 </style>
