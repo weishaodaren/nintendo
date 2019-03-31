@@ -13,6 +13,8 @@ import Login from './components/home/Login.vue';
 import ShopCart from './components/home/ShopCart.vue';
 import Logout from './components/home/Logout.vue';
 import Register from './components/Register.vue';
+import Search from './components/Search.vue';
+import User from './components/goods/User.vue';
 
 
 Vue.use(Router)
@@ -31,7 +33,9 @@ export default new Router({
     {path:'/Login',component:Login},
     {path:'/ShopCart',component:ShopCart},
     {path:'/Logout',component:Logout},
-    {path:'/Register',component:Register}
+    {path:'/Register',component:Register},
+    {path:'/Search',component:Search},
+    {path:'/User',component:User},
   ]
 })
 

@@ -1,8 +1,8 @@
 <template>
     <div>
-<mt-field label="用户名" placeholder="请输入用户名" v-model="username"></mt-field>
+<mt-field label="用户名" placeholder="3~12位英文字母或数字" v-model="uname"></mt-field>
 <mt-field label="邮箱" placeholder="请输入邮箱" type="email" v-model="email"></mt-field>
-<mt-field label="密码" placeholder="请输入密码" type="password" v-model="password"></mt-field>
+<mt-field label="密码" placeholder="6~8位英文字母或数字" type="password" v-model="upwd"></mt-field>
 <mt-field label="手机号" placeholder="请输入手机号" type="tel" v-model="phone"></mt-field>
 <mt-field label="生日" placeholder="请输入生日" type="date" v-model="birthday"></mt-field>
 <mt-button size='large' @click="toLogin">
@@ -13,22 +13,37 @@
 </template>
 
 <script>
+import { Toast } from 'mint-ui';
 export default {
     data(){
         return{
-            username:'',
+            uname:'',
             email:'',
-            password:'',
+            upwd:'',
             phone:'',
             birthday:'',
-            
-            
         }
     },
-    toLogin(){
-        
+    methods:{
+        toLogin(){
+            var reg=/^[a-z0-9]{3,12}$/i;
+            if(!reg.test(this.uname)){
+                Toast('用户名格式不对👀');
+                return;
+            };
+             var reg=/^[a-z0-9]{6,8}$/i;
+            if(!reg.test(this.upwd)){
+                Toast('密码格式不对👀');
+                return;
+            }
+        this.axios.get(this.$store.state.globalUrl+'myReg?uname='+this.uname+'&upwd='+this.upwd).then((res)=>{
+            // console.log(res)
+            this.$router.push('/login')
+        }).catch((err)=>{
+            console.log(err);
+        })
     }
-   
+    }
 }
 </script>
 

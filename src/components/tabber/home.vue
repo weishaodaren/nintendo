@@ -31,13 +31,15 @@
         <div class="mui-media-body">登出</div>
         </router-link></li>
     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <router-link to="/Login">
+        <router-link to="/Register">
         <img src="../../img/menu5.png">
-        <div class="mui-media-body">登录</div>
+        <div class="mui-media-body">注册</div>
         </router-link></li>
-    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+        <router-link to="/Search">
         <img src="../../img/menu6.png">
-        <div class="mui-media-body">搜索</div></a></li>
+        <div class="mui-media-body">搜索</div>
+        </router-link></li>
 </ul> 
   <!--tabber--> 
 <!--放到公共样式中了--> 
@@ -69,7 +71,7 @@ export default {
          handlegIF(){
              var url=this.$store.state.globalUrl+"myGif";
          this.axios.get(url).then((res)=>{
-                console.log(res);
+                // console.log(res);
                 this.my_gif=res.data;
             }).catch((err)=>{
             console.log(err)

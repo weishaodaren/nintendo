@@ -6,13 +6,14 @@ import Mint from 'mint-ui';
 import 'mint-ui/lib/style.css';
 Vue.use(Mint);
 //1.引入mint-ui组件
-import {Header,Swipe,SwipeItem,Button} from "mint-ui"  //要其中一个
+import {Header,Swipe,SwipeItem,Button,Search} from "mint-ui"  //要其中一个
 //2.注册
 Vue.component(Header.name,Header);
 Vue.component(Swipe.name,Swipe);
 Vue.component(SwipeItem.name,SwipeItem);
 //引入button这个按钮  也是mint-ui的
 Vue.component(Button.name,Button);
+Vue.component(Search.name,Search);
 
 // import './assets/css/myMint.scss'
 import'mint-ui/lib/style.css'
